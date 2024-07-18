@@ -1,0 +1,28 @@
+
+<div class="products">
+  <div class="products__wrap">
+    <table class="products__table">
+      <thead>
+        <tr>
+          <th>Logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripción</th>
+          <th>Fecha de liberación</th>
+          <th>Fecha de restructuración</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products(); track product.id ) {
+          <tr class="product">
+            <td>{{ product.logo }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.date_release }}</td>
+            <td>{{ product.date_revision }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>

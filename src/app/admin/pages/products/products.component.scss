@@ -1,0 +1,35 @@
+@use 'mixins' as m;
+
+.products {
+  width: 100%;
+  border: .1rem solid black;
+  padding: 2rem;
+
+  &__wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: #f9fafc;
+    @include m.border-bottom;
+  }
+
+  :is(th, td) {
+    width: 15rem;
+    padding: 2rem;
+  }
+
+  th {
+    text-align: start;
+  }
+}
+
+.product {
+  @include m.border-bottom;
+}

@@ -8,16 +8,18 @@ html {
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
+// TODO: ELIMINAR SI NO SE USA
 img {
   display: block;
   max-width: 100%;
 }
 
+// TODO: ELIMINAR SI NO SE USA
 a {
   text-decoration: none;
   cursor: pointer;
@@ -29,6 +31,7 @@ a {
   width: 90%;
 }
 
+// TODO: ELIMINAR SI NO SE USA
 .msg-error {
   display: block;
   font-size: 1.4rem;
@@ -39,11 +42,13 @@ a {
   transition: opacity .2s ease, transform .2s ease;
 }
 
+// TODO: ELIMINAR SI NO SE USA
 .msg-error.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+// TODO: ELIMINAR SI NO SE USA
 .truncated-cell {
   white-space: nowrap;
   overflow: hidden;
@@ -51,6 +56,7 @@ a {
   width: 12rem;
 }
 
+// TODO: ELIMINAR SI NO SE USA
 .badge {
   display: inline-block;
   white-space: nowrap;
