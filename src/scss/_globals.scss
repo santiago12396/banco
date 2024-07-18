@@ -1,0 +1,63 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.msg-error {
+  display: block;
+  font-size: 1.4rem;
+  color: red;
+  margin-top: .5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.msg-error.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.truncated-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 12rem;
+}
+
+.badge {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.6rem;
+  padding: .5rem 1rem;
+  border-radius: .6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
