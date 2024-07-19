@@ -1,11 +1,21 @@
+@use 'variables' as *;
 @use 'mixins' as m;
 
 .products {
-  width: 100%;
-  border: .1rem solid black;
-  padding: 2rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  &__wrap {
+  &__main {
+    background-color: $color-white;
+    margin-top: 2rem;
+    width: 100%;
+    border: .1rem solid black;
+    padding: 2rem;
+  }
+
+  &__wrap-table {
     width: 100%;
     overflow-x: auto;
   }
@@ -16,8 +26,7 @@
   }
 
   thead {
-    background-color: #f9fafc;
-    @include m.border-bottom;
+    background-color: $color-gray;
   }
 
   :is(th, td) {
@@ -28,8 +37,4 @@
   th {
     text-align: start;
   }
-}
-
-.product {
-  @include m.border-bottom;
 }

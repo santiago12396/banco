@@ -21,10 +21,3 @@
         @content;
     }
 }
-
-@mixin border-bottom {
-  border: 0;
-  border-bottom: .1rem;
-  border-style: solid;
-  border-color: black;
-}

@@ -1,28 +1,43 @@
 
-<div class="products">
-  <div class="products__wrap">
-    <table class="products__table">
-      <thead>
-        <tr>
-          <th>Logo</th>
-          <th>Nombre del producto</th>
-          <th>Descripción</th>
-          <th>Fecha de liberación</th>
-          <th>Fecha de restructuración</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (product of products(); track product.id ) {
-          <tr class="product">
-            <td>{{ product.logo }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.date_release }}</td>
-            <td>{{ product.date_revision }}</td>
+
+<div class="products container">
+
+  <header class="products__header">
+    <app-search-input (onSearchTerm)="searchTerm.set($event)" />
+    <button class="custom-button">Agregar</button>
+  </header>
+
+  <main class="products__main">
+    <div class="products__wrap-table">
+      <table class="products__table">
+        <thead class="custom-border-bottom">
+          <tr>
+            <th>Logo</th>
+            <th>Nombre del producto</th>
+            <th>Descripción</th>
+            <th>Fecha de liberación</th>
+            <th>Fecha de restructuración</th>
           </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          @for (product of products() | search:searchTerm(); track product.id ) {
+            <tr class="custom-border-bottom">
+              <td>{{ product.logo }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>{{ product.date_release }}</td>
+              <td>{{ product.date_revision }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
 
 </div>
+
+
+
+
+
+
