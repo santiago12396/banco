@@ -3,7 +3,7 @@
 <div class="products container">
 
   <header class="products__header">
-    <app-search-input (onSearchTerm)="searchTerm.set($event)" />
+    <app-search-input (onSearchTerm)="handleChangeSearchTerm($event)" />
     <button class="custom-button">Agregar</button>
   </header>
 
@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (product of products() | search:searchTerm(); track product.id ) {
+          @for (product of productsAux(); track product.id ) {
             <tr class="custom-border-bottom">
               <td>{{ product.logo }}</td>
               <td>{{ product.name }}</td>
@@ -32,6 +32,15 @@
         </tbody>
       </table>
     </div>
+
+    <app-pagination
+      [currentPage]="currentPage()"
+      [totalPages]="totalPages"
+      [totalProducts]="filteredProducts().length"
+      (onPageCurrent)="handleChangePageCurrent($event)"
+    />
+    <app-items-per-page (onItemsPerPage)="handleChangeItemsPerPage($event)" />
+
   </main>
 
 </div>

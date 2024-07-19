@@ -1,0 +1,14 @@
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__controls {
+    display: flex;
+  }
+
+  a {
+    width: 3rem;
+    height: 3rem;
+  }
+}
