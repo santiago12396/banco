@@ -8,15 +8,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './dialog.component.scss'
 })
 export class DialogComponent {
-  @Input() title: string = '';
-  @Output() closed = new EventEmitter<void>();
-  @Output() confirmed = new EventEmitter<void>();
+  @Input() title = '';
+  @Output() onClosed = new EventEmitter<void>();
+  @Output() onConfirmed = new EventEmitter<void>();
 
-  closeDialog() {
-    this.closed.emit();
+  handleClose() {
+    this.onClosed.emit();
   }
 
-  confirm() {
-    this.confirmed.emit();
+  handleConfirm() {
+    this.onConfirmed.emit();
   }
 }

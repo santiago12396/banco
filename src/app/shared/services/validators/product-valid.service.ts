@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
-import { map, Observable } from 'rxjs';
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
+import { map, Observable, of } from 'rxjs';
 import { ProductService } from './../product.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductValidService implements AsyncValidator {
+export class ProductValidService {
 
   constructor(private productService: ProductService) { }
 
-  validate(control: AbstractControl): Observable<ValidationErrors | null> {
+  idValidator(id?: string): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
+      const idValue = control.value;
 
-    const id = control.value;
+      if (id && idValue === id) return of(null);
 
-    return this.productService.existProductByID(id)
-              .pipe(
-                map(existProduct => existProduct ? { idExist: true }: null)
-              );
+      return this.productService.existProductByID(idValue).pipe(
+        map(existProduct => existProduct ? { idExist: true } : null)
+      );
+    };
   }
+
 }
 

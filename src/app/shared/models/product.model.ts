@@ -10,7 +10,7 @@ export interface IProduct {
   date_revision: Date;
 }
 
-export interface ICreateProductResp {
+export interface IAlterProductResp {
   message: string;
-  product: IProduct;
+  product?: IProduct;
 }

@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    background-color: $color-white;
+    box-shadow: 0 .4rem .8rem 0 rgba(0,0,0, .1);
+    z-index: 9999;
+    min-width: 12rem;
+
+    & > button {
+      color: $color-black;
+      padding: .8rem 1.2rem;
+      text-decoration: none;
+      display: block;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color-gray, 5%);
+      }
+    }
+  }
+}

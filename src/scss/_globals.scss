@@ -31,6 +31,11 @@ hr {
   margin: 0;
 }
 
+input[readonly] {
+  background-color: $color-gray;
+  cursor: not-allowed;
+}
+
 .container {
   max-width: 140rem;
   margin: auto;
@@ -46,7 +51,7 @@ hr {
   border: 0;
   border-bottom: .1rem;
   border-style: solid;
-  border-color: black;
+  border-color: $color-black;
 }
 
 .msg-error {
@@ -62,5 +67,4 @@ hr {
   opacity: 1;
   transform: translateY(0);
 }
-
 

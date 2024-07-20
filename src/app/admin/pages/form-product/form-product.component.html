@@ -2,10 +2,10 @@
 <div class="container">
   <div class="form-product">
     <header class="form-product__header">
-      <a routerLink=".." class="form-product__back">
+      <a routerLink="/products" class="form-product__back">
         <img src="/assets/icons/back.svg" alt="icono de regresar">
       </a>
-      <h2 class="form-product__title">Formulario de {{ 'Registro' }}</h2>
+      <h2 class="form-product__title">Formulario de {{ formTitle() }}</h2>
     </header>
     <hr>
     <form [formGroup]="form" (ngSubmit)="handleSubmit()">
@@ -13,7 +13,14 @@
         <div class="form-product__wrap-field">
           <div class="form-product__field">
             <label for="ID">ID</label>
-            <input class="form-product__input" type="text" [ngClass]="{ 'form-product__input--error' : getIsValidField('ID') }" id="ID" formControlName="ID" placeholder="ID del producto">
+            <input
+                  class="form-product__input"
+                  [ngClass]="{ 'form-product__input--error' : getIsValidField('ID') }"
+                  [readOnly]="isReadOnly"
+                  type="text"
+                  id="ID"
+                  formControlName="ID"
+                  placeholder="ID del producto">
           </div>
 
           <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('ID') }">

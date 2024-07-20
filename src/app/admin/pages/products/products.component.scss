@@ -31,7 +31,7 @@
     background-color: $color-white;
     margin-top: 2rem;
     width: 100%;
-    border: .1rem solid black;
+    border: .1rem solid $color-black;
     padding: 2rem;
   }
 
@@ -53,6 +53,7 @@
     display: block;
     max-height: 50vh;
     overflow-y: auto;
+    padding-bottom: 5rem;
   }
 
   tr {
@@ -62,7 +63,7 @@
   }
 
   :is(th, td) {
-    width: 15rem;
+    width: 13rem;
     padding: 2rem;
   }
 

@@ -17,6 +17,7 @@
             <th>Descripción</th>
             <th>Fecha de liberación</th>
             <th>Fecha de restructuración</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,11 @@
               <td>{{ product.description }}</td>
               <td>{{ product.date_release }}</td>
               <td>{{ product.date_revision }}</td>
+              <td>
+                <app-drop-down
+                (onEdit)="handleEditProduct(product.id)"
+                (onDelete)="handleOpenDialog(product.id)" />
+              </td>
             </tr>
           } @empty {
             <img class="products__no-data" src="/assets/images/no-data.svg" alt="sin datos">
@@ -48,6 +54,12 @@
   </main>
 
 </div>
+
+<app-dialog
+  *ngIf="isDialogOpen()"
+  [title]="dialogTitle()"
+  (onClosed)="isDialogOpen.set(false)"
+  (onConfirmed)="handleDeleteProduct()" />
 
 
 
