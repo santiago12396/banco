@@ -1,4 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { ProductService } from '../../../shared/services/product.service';
 import { IProduct } from '../../../shared/models/product.model';
@@ -12,6 +13,7 @@ import { PaginationComponent } from '../../../shared/components/pagination/pagin
   selector: 'app-products',
   standalone: true,
   imports: [
+    RouterLink,
     SearchInputComponent,
     ItemsPerPageComponent,
     PaginationComponent
@@ -33,6 +35,12 @@ export class ProductsComponent implements OnInit {
 
   get totalPages(): number {
     return Math.ceil(this.filteredProducts().length / this.itemsPerPage());
+  }
+
+  handleImageError(event: Event): void {
+    const defaultImageUrl = '/assets/images/no-image.svg';
+    const target = event.target as HTMLImageElement;
+    target.src = defaultImageUrl;
   }
 
   ngOnInit(): void {
@@ -58,6 +66,7 @@ export class ProductsComponent implements OnInit {
       product.name.toLowerCase().includes(searchTerm) ||
       product.description.toLowerCase().includes(searchTerm)
     );
+
     this.filteredProducts.set(filtered);
     this.updateDisplayedProducts();
   }
@@ -69,9 +78,9 @@ export class ProductsComponent implements OnInit {
   }
 
   handleChangeSearchTerm(event: string): void {
-    this.searchTerm.set(event);
-    this.currentPage.set(1);
-    this.applySearchAndPagination();
+      this.searchTerm.set(event);
+      this.currentPage.set(1);
+      this.applySearchAndPagination();
   }
 
   handleChangeItemsPerPage(event: number) {

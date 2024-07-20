@@ -1,1 +1,102 @@
-<p>form-product works!</p>
+
+<div class="container">
+  <div class="form-product">
+    <header class="form-product__header">
+      <a routerLink=".." class="form-product__back">
+        <img src="/assets/icons/back.svg" alt="icono de regresar">
+      </a>
+      <h2 class="form-product__title">Formulario de {{ 'Registro' }}</h2>
+    </header>
+    <hr>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+      <div class="form-product__wrap">
+        <div class="form-product__wrap-field">
+          <div class="form-product__field">
+            <label for="ID">ID</label>
+            <input class="form-product__input" type="text" [ngClass]="{ 'form-product__input--error' : getIsValidField('ID') }" id="ID" formControlName="ID" placeholder="ID del producto">
+          </div>
+
+          <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('ID') }">
+            {{ getFieldError('ID') }}
+          </span>
+        </div>
+
+        <div class="form-product__wrap-field">
+            <div class="form-product__field">
+              <label for="name">Nombre</label>
+              <input class="form-product__input" type="text" [ngClass]="{ 'form-product__input--error' : getIsValidField('name') }" id="name" formControlName="name" placeholder="Nombre del producto">
+            </div>
+
+            <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('name') }">
+              {{ getFieldError('name') }}
+            </span>
+        </div>
+
+        <div class="form-product__wrap-field">
+            <div class="form-product__field">
+              <label for="description">Descripción</label>
+              <input class="form-product__input" type="text" [ngClass]="{ 'form-product__input--error' : getIsValidField('description') }" id="description" formControlName="description" placeholder="Descripción del producto">
+            </div>
+
+            <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('description') }">
+              {{ getFieldError('description') }}
+            </span>
+        </div>
+
+        <div class="form-product__wrap-field">
+          <div class="form-product__field">
+            <label for="logo">Logo</label>
+            <input class="form-product__input" type="text" [ngClass]="{ 'form-product__input--error' : getIsValidField('logo') }" id="logo" formControlName="logo" placeholder="URL del logo del producto">
+          </div>
+
+          <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('logo') }">
+            {{ getFieldError('logo') }}
+          </span>
+        </div>
+
+        <div class="form-product__wrap-field">
+          <div class="form-product__field">
+            <label for="dateRelease">Fecha Liberación</label>
+            <input
+              [ngClass]="{ 'form-product__input--error' : getIsValidField('dateRelease') }"
+              [min]="currentDateFormatted()"
+              type="date"
+              class="form-product__input"
+              id="dateRelease"
+              formControlName="dateRelease"
+              placeholder="Fecha liberación del producto">
+          </div>
+
+          <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('dateRelease') }">
+            {{ getFieldError('dateRelease') }}
+          </span>
+        </div>
+
+        <div class="form-product__wrap-field">
+          <div class="form-product__field">
+            <label for="dateRevision">Fecha Revisión</label>
+            <input
+                  [ngClass]="{ 'form-product__input--error' : getIsValidField('dateRevision') }"
+                  type="date"
+                  class="form-product__input"
+                  id="dateRevision"
+                  formControlName="dateRevision"
+                  placeholder="Fecha revisión del producto"
+                  readonly>
+          </div>
+
+          <span class="msg-error" [ngClass]="{ 'visible': getIsValidField('dateRevision') }">
+            {{ getFieldError('dateRevision') }}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-product__controls">
+        <button (click)="handleResetForm()" type="button" class="form-product__btn-reset">Reiniciar</button>
+        <button type="submit" class="form-product__btn-submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

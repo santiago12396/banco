@@ -4,7 +4,7 @@
 
   <header class="products__header">
     <app-search-input (onSearchTerm)="handleChangeSearchTerm($event)" />
-    <button class="custom-button">Agregar</button>
+    <button routerLink="/form-product" class="products__btn-add">Agregar</button>
   </header>
 
   <main class="products__main">
@@ -22,12 +22,16 @@
         <tbody>
           @for (product of productsAux(); track product.id ) {
             <tr class="custom-border-bottom">
-              <td>{{ product.logo }}</td>
+              <td>
+                <img (error)="handleImageError($event)" class="products__item-logo" [src]="product.logo" [alt]="product.name">
+              </td>
               <td>{{ product.name }}</td>
               <td>{{ product.description }}</td>
               <td>{{ product.date_release }}</td>
               <td>{{ product.date_revision }}</td>
             </tr>
+          } @empty {
+            <img class="products__no-data" src="/assets/images/no-data.svg" alt="sin datos">
           }
         </tbody>
       </table>

@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as m;
 
 html {
   font-size: 62.5%;
@@ -26,6 +27,10 @@ a {
   cursor: pointer;
 }
 
+hr {
+  margin: 0;
+}
+
 .container {
   max-width: 140rem;
   margin: auto;
@@ -44,52 +49,18 @@ a {
   border-color: black;
 }
 
-.custom-button {
-  background-color: $color-yellow;
-  border: none;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-radius: .5rem;
-  cursor: pointer;
-}
-.custom-button:hover {
-  background-color: darken($color-yellow, 10%);
-}
-
-
-// TODO: ELIMINAR SI NO SE USA
 .msg-error {
   display: block;
   font-size: 1.4rem;
-  color: red;
+  color: $color-red;
   margin-top: .5rem;
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-2rem);
   transition: opacity .2s ease, transform .2s ease;
 }
-
-// TODO: ELIMINAR SI NO SE USA
 .msg-error.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-// TODO: ELIMINAR SI NO SE USA
-.truncated-cell {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 12rem;
-}
-
-// TODO: ELIMINAR SI NO SE USA
-.badge {
-  display: inline-block;
-  white-space: nowrap;
-  line-height: 1.6rem;
-  padding: .5rem 1rem;
-  border-radius: .6rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
 

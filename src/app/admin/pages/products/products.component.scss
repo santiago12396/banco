@@ -4,7 +4,27 @@
 .products {
   &__header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  @include m.tablet {
+    &__header {
+      gap: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__btn-add {
+    @include m.custom-button($color-yellow, $color-black);
+    display: block;
+    margin-left: auto;
+
+    @include m.tablet {
+      display: inline-block;
+      margin-left: 0;
+    }
   }
 
   &__main {
@@ -48,5 +68,17 @@
 
   th {
     text-align: start;
+  }
+
+  &__item-logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__no-data {
+    height: 35rem;
+    padding-top: 2rem;
   }
 }

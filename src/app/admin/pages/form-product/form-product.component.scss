@@ -1,0 +1,91 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.container {
+  max-width: 100rem;
+  height: auto;
+}
+@include m.tablet {
+  .container {
+    height: 100vh;
+  }
+}
+
+.form-product {
+  background-color: $color-white;
+  padding-bottom: 5rem;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    @include m.tablet {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    a {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &__wrap {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  @include m.tablet {
+    &__wrap {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 2rem 5rem;
+    }
+  }
+
+  &__wrap-field {
+    height: 10.5rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  &__input {
+    outline: none;
+    border: .1rem solid darken($color-gray, 25%);
+    border-radius: .4rem;
+    padding: 1.5rem 1rem;
+
+    &:focus {
+      border-color: darken($color-gray, 50%);
+    }
+    &--error {
+      border-color: $color-red;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  &__btn-reset {
+    @include m.custom-button($color-gray, $color-black);
+  }
+
+  &__btn-submit {
+    @include m.custom-button($color-yellow, $color-black);
+  }
+}
+
+

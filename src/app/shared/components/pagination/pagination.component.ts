@@ -17,7 +17,6 @@ export class PaginationComponent {
 
   handlePreviousPage() {
     if (this.currentPage > 1) {
-      console.log('PREV');
       this.currentPage = this.currentPage - 1;
       this.onPageCurrent.emit(this.currentPage);
     }
@@ -25,7 +24,6 @@ export class PaginationComponent {
 
   handleNextPage() {
     if (this.currentPage < this.totalPages) {
-      console.log('NEXT');
       this.currentPage = this.currentPage + 1;
       this.onPageCurrent.emit(this.currentPage);
     }

@@ -1,7 +1,6 @@
 export interface IProductResp {
   data: IProduct[];
 }
-
 export interface IProduct {
   id: string;
   name: string;
@@ -9,4 +8,9 @@ export interface IProduct {
   logo: string;
   date_release: Date;
   date_revision: Date;
+}
+
+export interface ICreateProductResp {
+  message: string;
+  product: IProduct;
 }
