@@ -6,11 +6,14 @@ export interface IProduct {
   name: string;
   description: string;
   logo: string;
-  date_release: Date;
-  date_revision: Date;
+  date_release: string;
+  date_revision: string;
 }
+
+export interface ICreateProductDTO extends Omit<IProduct, 'id'>  {}
+export interface IUpdateProductDTO extends Partial<IProduct> {}
 
 export interface IAlterProductResp {
   message: string;
-  product?: IProduct;
+  product: IProduct;
 }

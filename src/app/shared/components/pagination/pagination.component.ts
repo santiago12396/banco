@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './pagination.component.scss'
 })
 export class PaginationComponent {
-
   @Input() currentPage!: number;
   @Input() totalPages!: number;
   @Input() totalProducts!: number;

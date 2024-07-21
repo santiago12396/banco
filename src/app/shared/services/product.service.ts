@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { IAlterProductResp, IProduct, IProductResp } from '../models/product.model';
+import { IAlterProductResp, ICreateProductDTO, IProduct, IProductResp, IUpdateProductDTO } from '../models/product.model';
 import { environment } from '../../../environments/environment.development';
 
 @Injectable({
@@ -25,11 +25,11 @@ export class ProductService {
     return this.http.get<boolean>(`${environment.apiUrl}/products/verification/${id}`);
   }
 
-  createProduct(product: IProduct): Observable<IAlterProductResp> {
+  createProduct(product: ICreateProductDTO): Observable<IAlterProductResp> {
     return this.http.post<IAlterProductResp>(`${environment.apiUrl}/products`, product);
   }
 
-  updateProduct(product: IProduct): Observable<IAlterProductResp> {
+  updateProduct(product: IUpdateProductDTO): Observable<IAlterProductResp> {
     return this.http.put<IAlterProductResp>(`${environment.apiUrl}/products/${product.id}`, product);
   }
 

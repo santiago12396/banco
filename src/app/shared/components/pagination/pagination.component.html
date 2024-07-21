@@ -1,10 +1,10 @@
 <div class="pagination">
   <span>{{ currentPage }} / {{ totalPages }} de {{ totalProducts }} productos</span>
   <div class="pagination__controls">
-    <a (click)="handlePreviousPage()">
+    <a class="pagination__prev" (click)="handlePreviousPage()">
       <img src="/assets/icons/arrow-prev.svg" alt="icono anterior">
     </a>
-    <a (click)="handleNextPage()">
+    <a class="pagination__next" (click)="handleNextPage()">
       <img src="/assets/icons/arrow-next.svg" alt="icono siguiente">
     </a>
   </div>

@@ -1,27 +1,40 @@
 # Banco
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+Este es el proyecto **Banco**, una aplicación desarrollada con Angular version 17.2.1.
 
-## Development server
+## Requisitos 📋
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (versión 14 o superior)
+- [npm](https://www.npmjs.com/) (versión 6 o superior)
+- [Angular CLI](https://angular.io/cli) (versión >= 17.2.1) (opcional)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación 🔧
 
-## Build
+Para ejecuta el proyecto primero tienes que instalar los modulos de node:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```npm install```
 
-## Running unit tests
+## Ejecutar el Proyecto 🚀
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para iniciar la aplicación en entorno de desarrollo, sigue estos pasos:
 
-## Running end-to-end tests
+- Ejecuta el siguiente comando para iniciar el servidor de desarrollo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```npm start```
 
-## Further help
+- Abre tu navegador y navega a http://localhost:4200.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Ejecutar las Pruebas 🧪
+
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+
+   ```npm run test```
+
+
+Si deseas generar el reporte de cobertura, utiliza:
+
+   ```npm run test:coverage```
+

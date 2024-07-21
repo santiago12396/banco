@@ -9,7 +9,7 @@ import { ProductService } from './../../../shared/services/product.service';
 import { ProductValidService } from './../../../shared/services/validators/product-valid.service';
 import { ValidatorService } from '../../../shared/services/validators/validator.service';
 import { DialogComponent } from '../../../shared/components/dialog/dialog.component';
-import { IProduct } from '../../../shared/models/product.model';
+import { ICreateProductDTO, IProduct } from '../../../shared/models/product.model';
 
 @Component({
   selector: 'app-form-product',
@@ -115,8 +115,8 @@ export class FormProductComponent implements OnInit {
     this.form.reset({ ID: this.id });
   }
 
-  createProduct({ id, name, description, logo, date_release, date_revision }: IProduct) {
-    this.productService.createProduct({ id, name, description, logo, date_release, date_revision })
+  createProduct({ name, description, logo, date_release, date_revision }: ICreateProductDTO) {
+    this.productService.createProduct({ name, description, logo, date_release, date_revision })
     .subscribe({
       next: ()  => {
         this.router.navigateByUrl('/products');
@@ -150,6 +150,6 @@ export class FormProductComponent implements OnInit {
 
     if(this.id) return this.updateProduct({ id, name, description, logo, date_release, date_revision });
 
-    this.createProduct({ id, name, description, logo, date_release, date_revision });
+    this.createProduct({ name, description, logo, date_release, date_revision });
   }
 }

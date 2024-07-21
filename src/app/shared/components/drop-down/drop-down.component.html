@@ -1,7 +1,7 @@
 <div class="dropdown">
   <img src="/assets/icons/menu.svg" alt="menu" (click)="toggleDropdown()" class="dropdown__icon">
   <div class="dropdown__menu" *ngIf="isOpen">
-    <button (click)="editProduct()">Editar</button>
-    <button (click)="deleteProduct()">Eliminar</button>
+    <button class="dropdown__edit" (click)="editProduct()">Editar</button>
+    <button class="dropdown__delete" (click)="deleteProduct()">Eliminar</button>
   </div>
 </div>
